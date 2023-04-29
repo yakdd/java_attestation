@@ -1,0 +1,39 @@
+1.2.3. Создать директории и файлы:
+root@yddux:/home/yakdd/temp/attestation# mkdir toys_schoolboys toys_babies
+root@yddux:/home/yakdd/temp/attestation# cd toys_schoolboys/
+root@yddux:/home/yakdd/temp/attestation/toys_schoolboys# touch robots.txt constructors.txt board-games.txt
+root@yddux:/home/yakdd/temp/attestation/toys_schoolboys# cd ../toys_babies/
+root@yddux:/home/yakdd/temp/attestation/toys_babies# touch stuffed-toys.txt dolls.txt cars.txt
+
+4. Объединить директории:
+root@yddux:/home/yakdd/temp/attestation# mkdir toy_name
+root@yddux:/home/yakdd/temp/attestation# mv toys_babies/* toy_name/
+root@yddux:/home/yakdd/temp/attestation# mv toys_schoolboys/* toy_name/
+root@yddux:/home/yakdd/temp/attestation# rm toys_babies/ -r
+root@yddux:/home/yakdd/temp/attestation# rm toys_schoolboys/ -r
+
+5.6. Переименовать дтректорию, показать содержимое:
+root@yddux:/home/yakdd/temp/attestation# mv toy_name/ toys/
+root@yddux:/home/yakdd/temp/attestation# cd toys/
+root@yddux:/home/yakdd/temp/attestation/toys# ll
+итого 8
+drwxr-xr-x 2 root root 4096 апр 28 19:11 ./
+drwxr-xr-x 3 root root 4096 апр 28 19:16 ../
+-rw-rw-r-- 1 root root    0 апр 28 18:49 board-games.txt
+-rw-rw-r-- 1 root root    0 апр 28 18:51 cars.txt
+-rw-rw-r-- 1 root root    0 апр 28 18:49 constructors.txt
+-rw-rw-r-- 1 root root    0 апр 28 18:51 dolls.txt
+-rw-rw-r-- 1 root root    0 апр 28 18:49 robots.txt
+-rw-rw-r-- 1 root root    0 апр 28 18:51 stuffed-toys.txt
+
+7. Установить и удалить любой snap-пакет:
+root@yddux:/home/yakdd/temp/attestation/toys# snap search postman
+root@yddux:/home/yakdd/temp/attestation/toys# snap install postman
+postman (v10/stable) 10.13.0 от Postman, Inc. (postman-inc✓) установлен
+root@yddux:/home/yakdd/temp/attestation/toys# snap remove postman
+postman удалён
+
+8. Задача на выполнение каждые 3 минуты:
+yakdd@yddux:~/temp/attestation$ crontab -l
+ */3 * * * * echo "$(date)" >> ~/temp/attestation/file.txt
+
