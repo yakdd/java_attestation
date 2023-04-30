@@ -13,7 +13,7 @@ public class ClassToy {
 
     @Override
     public String toString() {
-        return "Toy: " + this.name + ";  ID: " + this.id + ";  Weight: " + this.weight + "%.";
+        return "Игрушка: " + this.name + ";  id: " + this.id + ";  вес: " + this.weight + "%.";
     }
 
     public int getId() {
