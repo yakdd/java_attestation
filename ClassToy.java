@@ -1,11 +1,11 @@
 
-public class ClassToy {
+public class ClassToy implements Comparable<ClassToy> {
 
     protected int id;
     protected String name;
-    protected float weight;
+    protected int weight;
 
-    public ClassToy(int id, String name, float weight) {
+    public ClassToy(int id, String name, int weight) {
         this.id = id;
         this.name = name;
         this.weight = weight;
@@ -13,7 +13,12 @@ public class ClassToy {
 
     @Override
     public String toString() {
-        return "Игрушка: " + this.name + ";  id: " + this.id + ";  вес: " + this.weight + "%.";
+        return this.name + ";  id: " + this.id + ";  вес: " + this.weight + "%.";
+    }
+
+    @Override
+    public int compareTo(ClassToy other) {
+        return other.getWeight() - this.getWeight();
     }
 
     public int getId() {
@@ -24,8 +29,7 @@ public class ClassToy {
         return name;
     }
 
-    public float getWeight() {
+    public int getWeight() {
         return weight;
     }
-
 }
